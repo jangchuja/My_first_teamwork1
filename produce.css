@@ -1,0 +1,433 @@
+@charset "utf-8";
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 헤더, 메인, 푸터 사이 간격 */
+    height: 100vh; /* 전체 화면 높이 */
+    margin: 0;
+    background-image: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%);
+    background-repeat: no-repeat;
+    background-size: cover; /* 배경이 화면 크기에 맞게 늘어남 */
+    background-attachment: fixed; /* 배경 고정 */
+}
+.index-logo a{
+    text-decoration: none; /* 밑줄 제거 */
+     color: inherit;
+}
+
+/* 헤더 시작 */
+header {
+    height: 150px; 
+    flex-shrink: 0; /* 헤더는 고정 크기 유지 */
+    background-image: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%);
+    display: flex; /* flex로 변경 */
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    justify-content: center; 
+    align-items: center; 
+    padding: 10px 20px; /* 패딩 추가 */
+    position: fixed; 
+    top: 0; /* 초기 위치 설정 */
+    left: 0; /* 왼쪽에 고정 */
+    width: 100%; 
+    transition: top 0.3s ease-in-out;
+    z-index: 1000;
+}
+header.show {
+    top: 0; /* 보일 때의 위치 */
+}
+
+header:not(.show) {
+    top: -100px; /* 헤더 높이만큼 숨김 */
+}
+
+
+.index-nav {
+    text-align: center; /* 중앙 정렬 */
+    padding: 10px 0; /* 상하 패딩 */
+    font-size: 18px;
+}
+
+.nav {
+    list-style-type: none; /* 기본 리스트 스타일 제거 */
+    padding: 0; /* 패딩 제거 */
+    margin: 0; /* 마진 제거 */
+    display: flex; /* flex로 변경하여 수평 정렬 */
+    justify-content: center; /* 중앙 정렬 */
+}
+
+.nav-item {
+    display: flex; /* 수평 정렬 */
+    position: relative; /* 자식 요소의 위치 기준 */
+    margin: 0 10px; /* 양쪽 간격을 10px씩 추가 */
+}
+.nav-item:hover{
+    color: #8A2BE2; /* 마우스 오버 시 색상 변경 */
+}
+
+.nav-link {
+    color: #333333; /* 기본 텍스트 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+    padding: 10px 15px; /* 패딩 추가 */
+}
+
+.nav-link i {
+    font-size: 24px; /* 아이콘 크기 조정 */
+    color: #333333; /* 아이콘 색상 조정 */
+    margin-right: 5px; /* 아이콘과 텍스트 간의 간격 조정 */
+}
+.nav-link i:hover{
+    color: #8A2BE2; /* 마우스 오버 시 색상 변경 */
+}
+
+.nav-item .nav-link {
+    display: flex; /* 아이콘과 텍스트를 수평으로 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+.nav-link:hover {
+    color: #8A2BE2; /* 마우스 오버 시 색상 변경 */
+}
+
+.nav-link.active {
+    font-weight: bold; /* 활성화된 링크 강조 */
+}
+
+
+/* 드롭다운 메뉴 스타일 */
+.dropdown {
+    display: none; /* 기본적으로 드롭다운 숨김 */
+    position: relative; /* 드롭다운 위치 설정 */
+}
+
+.dropdown-button {
+    background-color: #333333; /* 버튼 배경색 */
+    color: white; /* 버튼 텍스트 색상 */
+    padding: 8px 8px; /* 패딩 추가 */
+    border: none; /* 테두리 제거 */
+    cursor: pointer; /* 커서 포인터로 변경 */
+}
+
+/* 드롭다운 메뉴 항목 스타일 */
+.dropdown-content {
+    display: none; /* 기본적으로 드롭다운 내용 숨김 */
+    position: absolute; /* 절대 위치 설정 */
+    background-color: white; /* 배경색 */
+    min-width: 160px; /* 최소 너비 */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* 그림자 효과 */
+    z-index: 1; /* 다른 요소 위에 표시 */
+}
+
+.dropdown-content a {
+    color: black; /* 링크 색상 */
+    padding: 12px 16px; /* 패딩 추가 */
+    text-decoration: none; /* 밑줄 제거 */
+    display: block; /* 블록 요소로 설정 */
+}
+
+/* 드롭다운 메뉴 항목 호버 효과 */
+.dropdown-content a:hover {
+    background-color: #f1f1f1; /* 호버 시 배경색 변경 */
+}
+
+/* 드롭다운 버튼 클릭 시 드롭다운 내용 표시 */
+.dropdown-button:focus + .dropdown-content,
+.dropdown-content:hover {
+    display: block; /* 드롭다운 내용 표시 */
+}
+.dropdown-button:hover {
+    opacity: 0.8; /* 버튼을 눌렀을 때 투명도 설정 */
+}
+
+/* 미디어 쿼리: 화면 크기가 963px 이하일 때 */
+@media (max-width:  1250px) {
+    .index-nav {
+        display: none; /* 기존 nav 숨김 */
+    }
+
+    .dropdown {
+        display: block; /* 드롭다운 표시 */
+    }
+}
+.index-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-bottom: 5px;
+    border-bottom: solid 1px #333333; /* 기존 1px 선 */
+    width: 100%; /* 선을 전체 너비로 늘리기 */
+}
+
+.index-logo h1 {
+    color: #333333;
+    font-size: 50px;
+    line-height: normal;
+    font-family: "Bagel Fat One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* 푸터 시작 */
+footer {
+    height: 80px; 
+    flex-shrink: 0; /* 푸터는 고정 크기 유지 */
+    background-image: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%);
+    color: #333333;
+    width: 100%;
+}
+
+footer p {
+    margin: 1.2px;
+}
+
+.foot-i-school {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer i {
+    margin: 5px;
+}
+
+.foot-i-circle { /* 푸터 아이콘 설정  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin-bottom: 1.5px;
+}
+
+/* 메인 시작 */
+main {
+    padding-top: 150px; /* 헤더 크기만큼 패딩 추가 */
+    flex: 1; /* 메인이 가운데 공간 차지 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    gap: 60px;
+    font-family: "Gaegu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.card {
+    position: relative;
+    width: 400px;
+    height: 580px;
+    margin-top: 20px;
+    background: transparent; /* 카드 자체 배경 투명화 */
+    margin-bottom: 20px;
+    border:none;
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* 뒤집힐 때 뒷면 숨김 */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.5s;
+    background: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%); /* 뒷면 배경색 추가 */
+}
+.card .front {
+    transform: perspective(600px) rotateY(0deg);
+    background: transparent; /* 앞면 배경 투명화 */
+    box-shadow: 0 5px 10px #000;
+}
+
+
+.card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card .front h3{
+    position: absolute;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    bottom: 0;
+    color: #fff;
+    background:rgba(0,0,0,0.3);
+    margin: 0; /* 추가: 여백 제거 */
+    padding: 0; /* 추가: 패딩 제거 */
+    text-align: center;
+    font-size: 30px;
+}
+
+
+.card .back {
+    transform: perspective(600px) rotateY(180deg);
+    background: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%); /* 뒷면 배경색 동일 */
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000;
+}
+.card .back .link {
+    border-top: solid 1px #333333;
+    height: 70px;
+    line-height: 70px;
+    color: #fb8350; /* 기본 텍스트 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+
+/* 공통 스타일 */
+.social-link {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #fb8350; /* 아이콘과 텍스트 색상 동일하게 설정 */
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: "Pacifico", cursive;
+    font-weight: 200;
+    font-style: normal;
+}
+.social-link i{
+    margin-right: 6px;
+    font-size: 22px;
+
+}
+
+
+/* 아이콘에 마우스를 올렸을 때 색상 변경 */
+.social-link:hover {
+    opacity: 0.8; /* 호버 시 투명도 조절 */
+}
+
+
+.card .back h3{
+    font-size: 35px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+.card .back p{
+    letter-spacing: 1px;
+    margin: 10px;
+    font-size: 23px;
+    text-align: left; /* 왼쪽 정렬 */
+}
+
+
+.card.flip .front{
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card.flip .back {
+    transform: perspective(600px) rotateY(360deg);
+}
+
+.card:hover .front{
+    opacity: 0.8;
+}
+
+.card:hover .back {
+    opacity: 0.8;
+}
+@media (max-width: 480px) {
+
+    .index-logo h1 {
+        font-size: clamp(20px, 3vw + 5px, 30px); /* 제목 크기 조정 */
+    }
+  
+    .nav {
+        flex-direction: column; /* 수직 정렬로 변경 */
+        align-items: center; /* 중앙 정렬 */
+    }
+    .dropdown {
+        margin-top: 8px;
+    }
+    .nav-item {
+        margin: 5px 0; /* 위아래 간격 조정 */
+    }
+    
+    .nav-link {
+        font-size: clamp(14px, 2vw + 2px, 16px); /* 링크 텍스트 크기 조정 */
+        padding: 8px 10px; /* 패딩 조정 */
+    }
+    
+    .dropdown-button {
+        font-size: clamp(14px, 2vw + 2px, 16px); /* 드롭다운 버튼 크기 조정 */
+        padding: 6px 10px; /* 패딩 조정 */
+    }
+    
+    header {
+        height: 100px; 
+        padding: 8px 10px; /* 패딩 추가 */
+    }
+    header:not(.show) {
+        top: -100px; /* 헤더 높이만큼 숨김 */
+    }
+main{
+    padding-top: 110px;
+    }
+.card{
+    width: 300px;
+    height: 480px;
+}
+.card .back h3{
+    font-size: 25px;
+
+}
+
+.card .back p{
+    margin: 12px;
+    font-size: 16px;
+}
+.social-link {
+    font-size: 16px;
+    margin-left: 8px;
+    margin-right: 8px;
+
+}
+.social-link i{
+    margin-right: 5px;
+    font-size: 18px;
+}
+.card .back .link {
+
+    height: 60px;
+    line-height: 60px;
+
+}
+}
+@media (max-width: 330px) {
+    .index-logo h1 {
+
+        font-size: 27px;
+
+    }
+    .card{
+        width: 240px;
+        height: 420px;
+    }
+    .card .back p{
+        margin: 10px;
+        font-size: 14px;
+    }
+    .social-link {
+        font-size: 13px;
+        margin-left: 8px;
+        margin-right: 8px;
+    
+    }
+    .social-link i{
+        margin-right: 5px;
+        font-size: 15px;
+    }
+    .card .back .link {
+
+        height: 40px;
+        line-height: 40px;
+    
+    }
+}

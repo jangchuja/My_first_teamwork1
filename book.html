@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Sawai Book.ver</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./book.css">
+    <script src="./book.js" defer></script>
+    <script src="https://kit.fontawesome.com/f10167bfad.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header>
+        <div class="index-logo">
+            <h1>Ryosuke Sawai</h1>
+        </div>
+        <div class="index-nav">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i>About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="intro.html"><i class="fa-regular fa-circle-question"></i>Intro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="univer.html"><i class="fa-solid fa-building-columns"></i>대학시절</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="korea.html"><i class="fa-solid fa-plane"></i>한국에 온 이후</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="end.html"><i class="fa-regular fa-message"></i>마무리</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="book.html"><i class="fa-solid fa-book-open"></i>Book.ver</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="produce.html"><i class="fa-solid fa-users"></i>제작자</a>
+                </li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <button class="dropdown-button">MENU</button>
+            <div class="dropdown-content">
+                <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+                \<a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i>About Me</a>
+                <a class="nav-link" href="intro.html"><i class="fa-regular fa-circle-question"></i>Intro</a>
+                <a class="nav-link" href="univer.html"><i class="fa-solid fa-building-columns"></i>대학시절</a>
+                <a class="nav-link" href="korea.html"><i class="fa-solid fa-plane"></i>한국에 온 후</a>
+                <a class="nav-link" href="end.html"><i class="fa-regular fa-message"></i>마무리</a>
+                <a class="nav-link" href="produce.html"><i class="fa-solid fa-users"></i>제작자</a>
+               
+            </div>
+        </div>
+    </header>
+
+    <main>
+    <!--왼쪽 버튼 -->
+    <div class="container">
+        <button id="prev-btn">
+            <i class="fa-regular fa-circle-left" style="color: #f9e79f"></i>
+        </button>
+
+        <div id="book" class="book">
+
+                     <!-- 페이지1(page_1) -->
+            <div id="p1" class="paper">
+                <div class="front first-page">
+                        <div id="f1" class="front-content">
+                            <img class="book cover" src="./img/book-mastersawai.png" alt="마스터 사와이 표지" />
+                        </div>
+                                    </div>
+                <div class="back">
+                    <div id="b1" class="back-content">
+                        <img class="book cover" src="./img/story-1.png" alt="스토리1" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- 페이지2 본문(内容) -->
+            <div id="p2" class="paper">
+                <div class="front">
+                    <div id="f2" class="front-content">
+                        <img class="book cover" src="./img/story-2.png" alt="스토리2" />
+                    </div>
+                </div>
+                <div class="back">
+                    <div id="b2" class="back-content">
+                        <img class="book cover" src="./img/story-3.png" alt="스토리3" />
+                    </div>
+                </div>
+            </div>
+
+                <!-- 페이지3 본문(内容) -->
+            <div id="p3" class="paper">
+                <div class="front">
+                    <div id="f3" class="front-content">
+                        <img class="book cover" src="./img/story-4.png" alt="스토리4" />
+                    </div>
+                </div>
+                <div class="back last-page">
+                    <div id="b3" class="back-content">
+                        <img class="book cover" src="./img/sawai-end.jpg" alt="credit" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 오른쪽 버튼 -->
+        <button id="next-btn">
+            <i class="fa-regular fa-circle-right" style="color: #f9e79f"></i>
+        </button>
+    </div>
+    </main>
+
+    <footer class="text-center py-3";>
+        <div class="foot-i-school">
+            <i class="fa-regular fa-circle-user" style="color: #f9e79f "></i>
+            <p>부산외국어대학교 일본어융합학부</p>
+        </div>
+        <div class="foot-i-circle">
+            <i class="fa-regular fa-copyright" style="color: #f9e79f"></i>
+            <p> 2024 マスター. All rights reserved.</p>
+        </div>
+    </footer>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

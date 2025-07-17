@@ -1,0 +1,507 @@
+@charset "utf-8";
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* 전체 화면 높이 */
+    margin: 0; /* 기본 마진 제거 */
+}
+
+/* 헤더 시작 */
+header {
+    height: 150px; 
+    flex-shrink: 0; /* 헤더는 고정 크기 유지 */
+    background-image: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%);
+    display: flex; /* flex로 변경 */
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    z-index: 1000;
+}
+.index-logo a{
+    text-decoration: none; /* 밑줄 제거 */
+     color: inherit;
+}
+
+.index-nav {
+    text-align: center; /* 중앙 정렬 */
+    padding: 10px 0; /* 상하 패딩 */
+    font-size: 18px;
+}
+
+.nav {
+    list-style-type: none; /* 기본 리스트 스타일 제거 */
+    padding: 0; /* 패딩 제거 */
+    margin: 0; /* 마진 제거 */
+    display: flex; /* flex로 변경하여 수평 정렬 */
+    justify-content: center; /* 중앙 정렬 */
+}
+
+.nav-item {
+    display: flex; /* 수평 정렬 */
+    position: relative; /* 자식 요소의 위치 기준 */
+    margin: 0 10px; /* 양쪽 간격을 10px씩 추가 */
+}
+.nav-item:hover{
+    color: #8A2BE2; /* 마우스 오버 시 색상 변경 */
+}
+
+.nav-link {
+    color: #333333; /* 기본 텍스트 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+    padding: 10px 15px; /* 패딩 추가 */
+}
+
+.nav-link i {
+    font-size: 24px; /* 아이콘 크기 조정 */
+    color: #333333; /* 아이콘 색상 조정 */
+    margin-right: 5px; /* 아이콘과 텍스트 간의 간격 조정 */
+}
+.nav-link i:hover{
+    color: #8A2BE2; /* 마우스 오버 시 색상 변경 */
+}
+
+.nav-item .nav-link {
+    display: flex; /* 아이콘과 텍스트를 수평으로 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+.nav-link:hover {
+    color: #8A2BE2; /* 마우스 오버 시 색상 변경 */
+}
+
+.nav-link.active {
+    font-weight: bold; /* 활성화된 링크 강조 */
+}
+
+
+
+.dropdown {
+    display: none; /* 기본적으로 드롭다운 숨김 */
+    position: relative; /* 드롭다운 위치 설정 */
+}
+
+.dropdown-button {
+    background-color: #333333; /* 버튼 배경색 */
+    color: white; /* 버튼 텍스트 색상 */
+    padding: 8px 8px; /* 패딩 추가 */
+    border: none; /* 테두리 제거 */
+    cursor: pointer; /* 커서 포인터로 변경 */
+}
+
+/* 드롭다운 메뉴 항목 스타일 */
+.dropdown-content {
+    display: none; /* 기본적으로 드롭다운 내용 숨김 */
+    position: absolute; /* 절대 위치 설정 */
+    background-color: white; /* 배경색 */
+    min-width: 160px; /* 최소 너비 */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* 그림자 효과 */
+    z-index: 1; /* 다른 요소 위에 표시 */
+}
+
+.dropdown-content a {
+    color: black; /* 링크 색상 */
+    padding: 12px 16px; /* 패딩 추가 */
+    text-decoration: none; /* 밑줄 제거 */
+    display: block; /* 블록 요소로 설정 */
+}
+
+/* 드롭다운 메뉴 항목 호버 효과 */
+.dropdown-content a:hover {
+    background-color: #f1f1f1; /* 호버 시 배경색 변경 */
+}
+
+/* 드롭다운 버튼 클릭 시 드롭다운 내용 표시 */
+.dropdown-button:focus + .dropdown-content,
+.dropdown-content:hover {
+    display: block; /* 드롭다운 내용 표시 */
+}
+.dropdown-button:hover {
+    opacity: 0.8; /* 버튼을 눌렀을 때 투명도 설정 */
+}
+
+
+/* 미디어 쿼리: 화면 크기가 1223px 이하일 때 */
+@media (max-width: 1250px) {
+    .index-nav {
+        display: none; /* 기존 nav 숨김 */
+    }
+
+    .dropdown {
+        display: block; /* 드롭다운 표시 */
+    }
+}
+.index-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-bottom: 5px;
+    border-bottom: solid 1px #333333; /* 기존 1px 선 */
+    width: 100%; /* 선을 전체 너비로 늘리기 */
+}
+
+.index-logo h1 {
+    color: #333333;
+    font-size: 50px;
+    line-height: normal;
+    font-family: "Bagel Fat One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* 푸터 시작 */
+footer {
+    height: 70px; 
+    flex-shrink: 0; /* 푸터는 고정 크기 유지 */
+    background-image: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%);
+    color: #333333;
+    width: 100%;
+}
+
+footer p {
+    margin: 1.2px;
+}
+
+.foot-i-school {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer i {
+    margin: 5px;
+}
+
+.foot-i-circle { /* 푸터 아이콘 설정  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin-bottom: 1.5px;
+}
+
+/* 메인 시작 */
+main {
+    flex: 1; /* 메인 콘텐츠는 남은 공간을 차지 */
+    padding-top: 10px; /* 헤더 크기만큼 패딩 추가 */
+    display: flex;
+    flex-direction: row; /* 기본적으로 가로 방향 배치 */
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 10px;
+}
+
+.main-section{
+    flex: 3;
+    margin-left: 100px;
+    margin-right: 150px;
+    
+}
+
+.main-section h1{
+    font-size: 25px;
+    margin: 0;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.main-section p{
+    font-size: 18px;
+    margin-top: 1;
+    margin-bottom: 1px;
+    text-align: left; /* 왼쪽 정렬 */
+    
+}
+.main-section h3{
+    font-size: 25px;
+    margin: 0;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.profile{
+    border-bottom: solid 1px #333333;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.career{
+    padding-left: 10px;
+    padding-top: 20px;
+     
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+}
+.career h3{
+    font-size: 25px;
+    margin: 0;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.author{
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+.photo-section img {
+    max-width: auto; /* 이미지 최대 너비 */
+    height: 100%; /* 비율 유지 */
+}
+.author h3{
+    font-size: 25px;
+    margin: 0;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.photo-section{
+    flex: 1;
+}
+
+.column-word {
+    flex: 0.6;
+    writing-mode: vertical-rl; /* 세로쓰기 활성화 */
+    text-orientation: upright; /* 텍스트 방향을 직립으로 */
+    font-family: "Yuji Syuku", serif;
+    font-size: 24px; /* 폰트 크기 */
+    unicode-bidi: vertical-rl; /* 유니코드 쓰기 방향을 수직으로 설정 */
+    padding: 0px;
+    margin: 0px;
+    border-left: solid 1px #333333;
+    border-right: solid 1px #333333;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.blank{
+    padding-top: 520px;
+    font-size: 20px;
+}
+
+/* 모바일 버전 */
+/* 1270px 이하 */
+/* 기본 스타일 (1270px 이하 기본 구성) */
+@media (max-width: 1270px) {
+    main {
+        flex: 1;
+        padding: 30px;
+        margin: 20px auto;
+        max-width: 90%; /* 중앙에 배치 */
+    }
+
+    .main-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* 콘텐츠를 중앙 정렬 */
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .photo-section {
+        margin-bottom: 20px; /* 아래 공간 추가 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+    }
+
+    .column-word {
+        margin-top: 20px; /* 위쪽 여백 추가 */
+        font-size: 20px;
+        text-align: center; /* 텍스트 중앙 정렬 */
+    }
+}
+
+/* 963px 이하: 세로 정렬 시작 */
+@media (max-width: 1000px) {
+    header {
+        height: 130px; 
+
+    }
+    .index-logo h1 {
+        color: #333333;
+        font-size: clamp(28px, 4vw + 10px, 50px);
+    }
+    .photo-section img {
+        max-width: 95%; /* 이미지 최대 너비 */
+        height: auto; /* 비율 유지 */
+    }
+    main {
+        flex-direction: column; /* 세로 방향으로 정렬 */
+        padding: 20px; /* 패딩 조정 */
+        margin: 10px auto; /* 중앙 정렬 */
+        max-width: 100%; /* 화면에 맞게 너비 조정 */
+    }
+
+    .photo-section {
+        display: block; /* 블록 요소로 설정 */
+        margin: 0 auto 30px; /* 최상단 중앙 정렬 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+    }
+    .career{
+        border-bottom: solid 1px #333333;
+    }
+    .main-section {
+        display: flex; /* Flexbox 활성화 */
+        flex-direction: column; /* 세로 정렬 */
+        align-items: center; /* 수평 정렬 중앙 */
+        width: 100%; /* 너비 조정 */
+    }
+
+    .profile, .career, .author {
+        margin-bottom: 20px; /* 섹션 간격 추가 */
+        text-align: center; /* 텍스트 정렬 */
+        width: 100%; /* 너비 조정 */
+    }
+
+    .column-word {
+        order: 1; /* 마지막에 배치 */
+        margin-top: 30px; /* 위쪽 여백 추가 */
+        font-size: 16px; /* 텍스트 크기 조정 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+    }
+}
+
+
+/* 871px 이하: 더 작은 화면을 위한 조정 */
+@media (max-width: 871px) {
+    main {
+        padding: 15px;
+        max-width: 95%;
+    }
+
+    .photo-section {
+        margin: 0 auto 20px;
+    }
+
+    .main-section {
+        align-items: center;
+    }
+
+    .profile, .career, .author {
+        margin-bottom: 15px;
+        font-size: 14px; /* 텍스트 크기 축소 */
+    }
+
+    .column-word {
+        font-size: 24px;
+    }
+}
+
+/* 643px 이하: 모바일 친화적인 레이아웃 */
+@media (max-width: 643px) {
+    main {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .photo-section {
+        margin: 0 auto 20px;
+    }
+
+    .main-section {
+        align-items: center;
+    }
+
+    .profile, .career, .author {
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+
+    .column-word {
+        font-size: 20px;
+        
+    }
+}
+@media (max-width: 480px) {
+    header {
+        height: 100px; /* 헤더 높이 조정 */
+        padding: 0px; /* 패딩 조정 */
+    }
+
+    .index-logo h1 {
+        font-size: clamp(20px, 3vw + 5px, 30px); /* 제목 크기 조정 */
+    }
+    .column-word h2{
+        font-size: clamp(17px, 3vw + 1px, 24px);
+    }
+    .column-word p{
+        font-size: clamp(12px, 3vw + 1px, 18px);
+    }
+    .column-word{
+        height: 400px;
+    }
+    .blank{
+        padding-top: 340px;
+        font-size: 18px;
+        padding-left: 3px;
+    }
+    .index-logo h1 {
+        font-size: clamp(20px, 3vw + 5px, 30px); /* 제목 크기 조정 */
+    }
+  
+    .nav {
+        flex-direction: column; /* 수직 정렬로 변경 */
+        align-items: center; /* 중앙 정렬 */
+    }
+    .dropdown {
+        margin-top: 8px;
+    }
+    .nav-item {
+        margin: 5px 0; /* 위아래 간격 조정 */
+    }
+    .photo-section img {
+        max-width: 90%; /* 이미지 최대 너비 */
+        height: auto; /* 비율 유지 */
+    }
+    .nav-link {
+        font-size: clamp(14px, 2vw + 2px, 16px); /* 링크 텍스트 크기 조정 */
+        padding: 8px 10px; /* 패딩 조정 */
+    }
+    
+    .dropdown-button {
+        font-size: clamp(14px, 2vw + 2px, 16px); /* 드롭다운 버튼 크기 조정 */
+        padding: 6px 10px; /* 패딩 조정 */
+    }
+}
+@media (max-width: 320px) {
+    .profile, .career, .author {
+        margin-bottom: 8px;
+        font-size: 12px; /* 텍스트 크기 축소 */
+    }
+    .column-word h2{
+        font-size: clamp(14px, 2vw + 1px, 16px);
+    }
+    .column-word p{
+        font-size: clamp(11px, 2vw + 1px, 12.5px);
+    }
+    .column-word{
+        height: 400px;
+    }
+    .blank{
+        padding-top: 340px;
+        font-size: 18px;
+        padding-left: 3px;
+    }
+    
+    footer p {
+        font-size: clamp(10px, 2vw, 12px); /* 푸터 텍스트 크기 조정 */
+        margin-bottom: 6px;
+    }
+    
+    .foot-i-circle {
+        font-size: clamp(10px, 2vw, 12px); /* 푸터 아이콘 크기 조정 */
+    }
+  
+}

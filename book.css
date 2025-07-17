@@ -1,0 +1,300 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-blend-mode: multiply,multiply;
+    overflow: hidden;
+    background-color: rgb(10, 10, 4);
+    margin: 0;
+}
+header {
+    height: 150px; 
+    flex-shrink: 0; /* 헤더는 고정 크기 유지 */
+    background-color: rgb(10, 10, 4);
+    display: flex; /* flex로 변경 */
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    justify-content: center; 
+    align-items: center; 
+    padding: 10px 20px; /* 패딩 추가 */
+    width: 100%; 
+    z-index: 0;
+}
+
+
+/* 드롭다운 메뉴 스타일 */
+.dropdown {
+    display: none; /* 기본적으로 드롭다운 숨김 */
+    position: relative; /* 드롭다운 위치 설정 */
+}
+
+.dropdown-button {
+    background-color: #333333; /* 버튼 배경색 */
+    color: white; /* 버튼 텍스트 색상 */
+    padding: 8px 8px; /* 패딩 추가 */
+    border: none; /* 테두리 제거 */
+    cursor: pointer; /* 커서 포인터로 변경 */
+}
+
+/* 드롭다운 메뉴 항목 스타일 */
+.dropdown-content {
+    display: none; /* 기본적으로 드롭다운 내용 숨김 */
+    position: absolute; /* 절대 위치 설정 */
+    background-color: white; /* 배경색 */
+    min-width: 160px; /* 최소 너비 */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* 그림자 효과 */
+    z-index: 1; /* 다른 요소 위에 표시 */
+}
+
+.dropdown-content a {
+    color: black; /* 링크 색상 */
+    padding: 12px 16px; /* 패딩 추가 */
+    text-decoration: none; /* 밑줄 제거 */
+    display: block; /* 블록 요소로 설정 */
+}
+
+/* 드롭다운 메뉴 항목 호버 효과 */
+.dropdown-content a:hover {
+    background-color: #f1f1f1; /* 호버 시 배경색 변경 */
+}
+
+/* 드롭다운 버튼 클릭 시 드롭다운 내용 표시 */
+.dropdown-button:focus + .dropdown-content,
+.dropdown-content:hover {
+    display: block; /* 드롭다운 내용 표시 */
+}
+.dropdown-button:hover {
+    opacity: 0.8; /* 버튼을 눌렀을 때 투명도 설정 */
+}
+
+/* 미디어 쿼리: 화면 크기가 963px 이하일 때 */
+@media (max-width: 1086px) {
+    .index-nav {
+        display: none; /* 기존 nav 숨김 */
+    }
+
+    .dropdown {
+        display: block; /* 드롭다운 표시 */
+    }
+}
+.index-nav {
+    text-align: center; /* 중앙 정렬 */
+    padding: 10px 0; /* 상하 패딩 */
+    font-size: 18px;
+}
+
+.nav {
+    list-style-type: none; /* 기본 리스트 스타일 제거 */
+    padding: 0; /* 패딩 제거 */
+    margin: 0; /* 마진 제거 */
+    display: flex; /* flex로 변경하여 수평 정렬 */
+    justify-content: center; /* 중앙 정렬 */
+}
+
+.nav-item {
+    display: flex; /* 수평 정렬 */
+    position: relative; /* 자식 요소의 위치 기준 */
+    margin: 0 10px; /* 양쪽 간격을 10px씩 추가 */
+}
+.nav-item:hover{
+    color: #ff9e50; /* 마우스 오버 시 색상 변경 */
+}
+
+.nav-link {
+    color: #f9e79f; /* 기본 텍스트 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+    padding: 10px 15px; /* 패딩 추가 */
+}
+
+.nav-link i {
+    font-size: 24px; /* 아이콘 크기 조정 */
+    color: #f9e79f; /* 아이콘 색상 조정 */
+    margin-right: 5px; /* 아이콘과 텍스트 간의 간격 조정 */
+}
+.nav-link i:hover{
+    color: #ff9e50; /* 마우스 오버 시 색상 변경 */
+}
+
+.nav-item .nav-link {
+    display: flex; /* 아이콘과 텍스트를 수평으로 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+.nav-link:hover {
+    color: #ff9e50; /* 마우스 오버 시 색상 변경 */
+}
+
+.nav-link.active {
+    font-weight: bold; /* 활성화된 링크 강조 */
+}
+.index-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-bottom: 5px;
+    border-bottom: solid 1px #f9e79f; /* 기존 1px 선 */
+    width: 100%; /* 선을 전체 너비로 늘리기 */
+}
+
+.index-logo h1 {
+    color: #f9e79f;
+    font-size: 50px;
+    line-height: normal;
+    font-family: "Bagel Fat One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+footer {
+    padding-top: 10px;
+    height: 70px; 
+    flex-shrink: 0; /* 푸터는 고정 크기 유지 */
+    background-color: rgb(10, 10, 4);
+    color: #f9e79f;
+    width: 100%;
+    border-top: solid 1PX #f9e79f;
+}
+
+footer p {
+    margin: 1.2px;
+}
+
+.foot-i-school {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer i {
+    margin: 5px;
+}
+
+.foot-i-circle { /* 푸터 아이콘 설정  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin-bottom: 1.5px;
+}
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px; /* 헤더 높이만큼 상단 여백 추가 */ margin-bottom: 20px; /* 푸터 높이만큼 하단 여백 추가 */ max-width: 100%; /* 추가된 부분: 컨테이너가 화면을 넘어서지 않도록 제한 */
+}
+
+/* 부모클래스 */
+.book {
+    position: relative;
+    width: 900px;
+    height: 660px;
+    transition: transform 0.5s;
+    max-width: 100vw;
+    
+}
+/* 자식클래스 */
+.paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 3500px;
+}
+
+.front, .back {
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 1.2s;
+}
+.front {
+    z-index: 1;
+    backface-visibility: hidden;
+    border: 3px solid black;
+}
+.back {
+    z-index: 0;
+    border: 3px solid black;
+}
+.first-page, .last-page { /* 첫 페이지와 마지막 페이지에 대한 스타일 */ background-color: black; color: white;
+}
+.front-content, .back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.back-content {
+    transform: rotateY(180deg);
+}
+
+/* 책 넘기기(paper flip) 효과 */
+.flipped .front, .flipped .back {
+    transform: rotateY(-180deg);
+}
+
+/* 버튼 크기 지정(controller buttons) */
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 0 10px; /* 버튼 사이 간격 */
+    font-size: 40px; /* 아이콘 크기 조정 */
+    padding: 10px 20px; /* 버튼의 패딩 조정 */
+    border-radius: 5px; /* 버튼 모서리 둥글게 */
+    transition: background-color 0.3s; /* 배경색 전환 효과 */
+}
+/* 버튼의 포커스 상태에서 윤곽선을 없애기 */
+button:focus {
+    outline: none;
+}
+
+/* 버튼에 마우스를 올렸을 때 아이콘의 색상 지정 */
+button:hover i {
+    opacity: 0.8;
+}
+
+/* 아이콘 설정 */
+prev-btn i, next-btn {
+    font-size: 50px;
+    color: #ff9e50;
+}
+
+/* paper stack order 배열 */
+#p1 {
+    z-index: 3;
+    
+}
+#p2 {
+    z-index: 2;
+}
+#p3 {
+    z-index: 1;
+}
+
+
+.page1-title{
+    color:white;
+}
+
+main {
+    margin-top: 15px;
+    flex: 1; /* 메인 콘텐츠는 남은 공간을 차지 */
+    display: flex; /* Flexbox 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+
+}

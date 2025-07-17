@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Sawai Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Klee+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f10167bfad.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./index.css">
+    
+</head>
+<body>
+    <header>
+        <div class="index-logo">
+            <a href="index.html">
+              <h1>Ryosuke Sawai</h1>
+            </a>
+
+        </div>
+        <div class="index-nav">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i>About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="intro.html"><i class="fa-regular fa-circle-question"></i>Intro</a>
+                </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="univer.html"><i class="fa-solid fa-building-columns"></i>대학시절</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="korea.html"><i class="fa-solid fa-plane"></i>한국에 온 이후</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="end.html"><i class="fa-regular fa-message"></i>마무리</a>
+            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="book.html"><i class="fa-solid fa-book-open"></i>Book.ver</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="produce.html"><i class="fa-solid fa-users"></i>제작자</a>
+                </li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <button class="dropdown-button">MENU</button>
+            <div class="dropdown-content">
+                <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+                 <a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i>About Me</a>
+                <a class="nav-link" href="intro.html"><i class="fa-regular fa-circle-question"></i>Intro</a>
+                <a class="nav-link" href="univer.html"><i class="fa-solid fa-building-columns"></i>대학시절</a>
+                <a class="nav-link" href="korea.html"><i class="fa-solid fa-plane"></i>한국에 온 후</a>
+                <a class="nav-link" href="end.html"><i class="fa-regular fa-message"></i>마무리</a>
+                <a class="nav-link" href="produce.html"><i class="fa-solid fa-users"></i>제작자</a>
+               
+            </div>
+        </div>
+    </header>
+     <main>
+            <div class="main-background-img">
+                <img class="index main cover" src="./img/home-kyoto.jpg" alt="배경화면" />
+                <div class="overlay-text" id="typing-effect">
+                    <h2>"芸は身を助く"</h2>
+                    <p>一見今の生活、就職には役に立たないように見える趣味であってもそれを中途半端ではなく</p>
+                    <p>一生懸命極めるようにしてください。</p>
+                    <p>いつの日かきっとあなたを救ってくれます。</p>
+                    <p>-Ryosuke Sawai-</p>
+             
+            
+                <!-- 사진을 추가 -->
+                <div class="profile-section">
+                    <div class="profile-image">
+                        <a href="about.html">
+                            <img src="./img/profile.jpg" alt="Profile Image">
+                        </a>
+                                </div>
+                    <style>
+                        .custom-btn {
+                          width: 150px; /* 기본 크기 */
+                          height: 45px; /* 기본 크기 */
+                        }
+                      
+                        @media (max-width: 480px) {
+                          .custom-btn {
+                            width: 150px; 
+                            height: auto; /* 높이는 자동으로 조정 */
+                            margin-top: 0px;
+            
+                          }
+                        }
+                        @media (max-width: 353px) {
+                            .custom-btn {
+                              width: 100px; 
+                              height: auto; /* 높이는 자동으로 조정 */
+                              margin-top: 0px;
+              
+                            }
+                          }
+                      </style>
+                    <button type="button" class="btn btn-secondary custom-btn" onclick="location.href = 'about.html'">About Me</button>
+                </div>
+            </div>
+    </main>
+    <footer class="text-center py-3";>
+        <div class="foot-i-school">
+            <i class="fa-regular fa-circle-user" style="color: #8A2BE2 "></i>
+            <p>부산외국어대학교 일본어융합학부</p>
+        </div>
+        <div class="foot-i-circle">
+            <i class="fa-regular fa-copyright" style="color: #6A5ACD"></i>
+            <p> 2024 マスター. All rights reserved.</p>
+        </div>
+    </footer>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script src="./index.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
